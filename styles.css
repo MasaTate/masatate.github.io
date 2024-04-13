@@ -8,6 +8,7 @@ header {
     background-color: #f8f8f8;
     border-bottom: 1px solid #eaeaea;
     padding: 10px 0;
+    margin-bottom: 20px;
 }
 
 nav ul {
@@ -42,12 +43,12 @@ main {
 }
 
 .bio img {
-    max-width: 210px; 
-    max-height: 280px;
+    max-width: 180px; 
+    max-height: 240px;
     width: 20vw;
     height: 30vw;
     background-color: #ddd; /* Placeholder background color */
-    margin-right: 50px;
+    margin-right: 70px;
 }
 
 .bio div {
