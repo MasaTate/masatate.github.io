@@ -36,14 +36,14 @@ main {
 }
 
 .bio {
-    display: flex; /* Enables flexbox layout */
-    align-items: center; /* Aligns items vertically */
-    justify-content: center; /* Centers items horizontally */
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
 }
 
 .bio img {
-    width: 300px; 
-    max-height: 400px;
+    max-width: 210px; 
+    max-height: 280px;
     width: 20vw;
     height: 30vw;
     background-color: #ddd; /* Placeholder background color */
@@ -73,7 +73,7 @@ main {
 }
 
 .news, .research-interest {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .news h3 {
