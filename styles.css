@@ -101,6 +101,26 @@ main {
     padding-left: 0;
 }
 
+.news ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.news .date {
+    width: 150px; /* 日時部分の固定幅（必要に応じて調整） */
+    flex-shrink: 0;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+}
+
+.news .content {
+    flex-grow: 1;
+    text-align: left;
+    color: #555;
+}
+
 .container {
     display: flex;
     flex-direction: column;
