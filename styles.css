@@ -1,7 +1,14 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* padding を含めた幅で計算（横スクロール防止） */
+}
+
 body {
     font-family: "Vollkorn", serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
