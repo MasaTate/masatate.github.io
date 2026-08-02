@@ -21,7 +21,7 @@ nav ul {
 nav li {
     display: inline;
     margin-right: 20px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 nav a {
@@ -30,7 +30,8 @@ nav a {
 }
 
 main {
-    width: 80%; /* または好みの幅 */
+    width: 90%; /* または好みの幅 */
+    max-width: 1200px; /* ページ幅の上限 */
     margin-left: auto;
     margin-right: auto;
     padding: 20px; /* 内側の余白 */
@@ -38,36 +39,97 @@ main {
 
 .bio {
     display: flex;
-    align-items: center; 
-    justify-content: center; 
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
 }
 
 .bio img {
-    max-width: 240px; 
+    flex-shrink: 0;
+    width: 340px;          /* 隣のテキスト（Google Scholar / LinkedIn 行まで）と同じ高さ */
+    height: 340px;         /* 正方形 */
+    object-fit: cover;
+    object-position: top center;
     background-color: #ddd; /* Placeholder background color */
-    margin-right: 70px;
 }
 
 .bio div {
     flex: 1;
+    min-width: 0;
 }
 
 .bio h1 {
     font-family: "Zen Old Mincho", serif;
     margin: 0;
-    font-size: 32px;
+    font-size: 36px;
 }
 
 .bio h2 {
     font-family: "Vollkorn SC", serif;
     margin-top: 5px;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .bio p {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.bio-email {
+    margin-bottom: 0;
+}
+
+.bio-links {
+    margin-top: 0;
+}
+
+.affiliations {
+    margin-top: 30px;
+}
+
+.looking-for {
+    margin: 0 0 24px 0;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 600;
+    color: #c0392b;
+}
+
+.affiliations ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px 46px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.affiliations li {
+    width: 140px;
+    text-align: center;
+}
+
+.affiliations .logo {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.affiliations img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.affiliations span {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    color: #666;
 }
 
 .news, .research-interest, .publication {
@@ -78,27 +140,37 @@ main {
     font-family: "Vollkorn SC", serif;
     border-bottom: 4px solid #C96831;
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .research-interest h3 {
     font-family: "Vollkorn SC", serif;
     border-bottom: 4px solid #50837E;
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .publication h3 {
     font-family: "Vollkorn SC", serif;
     border-bottom: 4px solid #e3ba00;
     margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 26px;
 }
 
 .news ul, .research-interest ul {
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 1.6;
     list-style-type: none;
     padding-left: 0;
+}
+
+.research-interest ul {
+    list-style-type: disc;
+    padding-left: 1.3em;
+}
+
+.research-interest li {
+    margin-bottom: 4px;
 }
 
 .news ul li {
@@ -108,7 +180,7 @@ main {
 }
 
 .news .date {
-    width: 150px; /* 日時部分の固定幅（必要に応じて調整） */
+    width: 130px; /* 日時部分の固定幅（必要に応じて調整） */
     flex-shrink: 0;
     text-align: left;
     font-weight: bold;
@@ -121,20 +193,45 @@ main {
     color: #555;
 }
 
+.news-archive summary {
+    font-size: 17px;
+    color: #44658a;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.news-archive summary::before {
+    content: "Show ";
+}
+
+.news-archive[open] summary::before {
+    content: "Hide ";
+}
+
+.news-archive summary:hover {
+    text-decoration: underline;
+}
+
+.news-archive ul {
+    margin-top: 12px;
+    margin-bottom: 0;
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
+    padding: 10px 0;
 }
 .card {
     display: flex;
-    align-items: center;
-    margin: 20px 0;
+    align-items: flex-start;
+    margin: 28px 0;
     width: 100%;
 }
 .card-image {
-    width: 200px;
+    width: 190px;
+    flex-shrink: 0;
     height: auto;
     margin-right: 20px;
 }
@@ -142,20 +239,35 @@ main {
     flex: 1;
 }
 .card-title {
-    font-size: 18px;
-    margin: 0 0 2px 0;
+    font-size: 20px;
+    line-height: 1.35;
+    margin: 0 0 4px 0;
+}
+.card-title a {
+    text-decoration: none;
+    color: #2673b8;
+}
+.card-title a:hover {
+    text-decoration: underline;
 }
 .card-text {
-    font-size: 16px;
+    font-size: 17px;
     margin: 0 0 2px 0;
 }
 .card-conf {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
+    color: #5a5a5a;          /* 主要会議以外は黒より控えめに */
     padding-left: 12px;
     margin: 4px 0;
     border-left: 3px solid;
-    display: inline-block;
+    display: block;
+    width: fit-content;
+}
+
+.conf-sub {
+    font-weight: normal;     /* MIRU などの発表実績 */
+    color: #6e6e6e;
 }
 .conf-cvpr {
     border-color: #1e81be;   /* CVPR = red */
@@ -167,9 +279,26 @@ main {
     color: #e16a08;
 }
 
+.card-links {
+    font-size: 17px;
+    margin-top: 6px;
+}
+
 .card-links a {
     text-decoration: none;
-    color: #007BFF;
+    color: #4d7fac;
+}
+
+.card-links a:hover {
+    text-decoration: underline;
+}
+
+.card-abstract {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #555;
+    text-align: justify;
+    margin: 14px 0 0 0;
 }
 
 .highlight {
@@ -180,4 +309,146 @@ main {
 }
 .highlight .date {
     font-weight: bold;
+}
+
+/* ===== Responsive ===== */
+
+/* 小さめのラップトップ */
+@media (max-width: 1100px) {
+    main {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .bio {
+        gap: 28px;
+    }
+
+    .bio img {
+        width: 260px;
+        height: 260px;
+    }
+
+    .bio h1 {
+        font-size: 32px;
+    }
+
+    .bio h2 {
+        font-size: 23px;
+    }
+
+    .card-image {
+        width: 160px;
+    }
+}
+
+/* タブレット・スマートフォン */
+@media (max-width: 880px) {
+    nav ul {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    nav li {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+
+    /* 画像を上、テキストを下に積む */
+    .bio {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .bio img {
+        width: 200px;
+        max-width: 55%;
+        align-self: center;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+    }
+
+    .bio h1,
+    .bio h2 {
+        text-align: center;
+    }
+
+    .bio h1 {
+        font-size: 28px;
+    }
+
+    .bio h2 {
+        font-size: 21px;
+    }
+
+    .bio p,
+    .news ul,
+    .research-interest ul {
+        font-size: 16px;
+    }
+
+    .news, .research-interest, .publication {
+        margin-top: 36px;
+    }
+
+    .affiliations ul {
+        gap: 8px 18px;
+    }
+
+    .affiliations li {
+        width: 100px;
+    }
+
+    .affiliations .logo {
+        height: 36px;
+    }
+
+    .affiliations span {
+        font-size: 13px;
+    }
+
+    .news h3,
+    .research-interest h3,
+    .publication h3 {
+        font-size: 22px;
+    }
+
+    /* 日付を本文の上に置く */
+    .news ul li {
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
+
+    .news .date {
+        width: auto;
+        margin-bottom: 2px;
+    }
+
+    /* 論文カードも縦積みに */
+    .card {
+        flex-direction: column;
+        margin: 24px 0;
+    }
+
+    .card-image {
+        width: 100%;
+        max-width: 360px;
+        margin: 0 0 12px 0;
+    }
+
+    .card-title {
+        font-size: 18px;
+    }
+
+    .card-text,
+    .card-conf,
+    .card-links {
+        font-size: 15px;
+    }
+
+    .card-abstract {
+        font-size: 15px;
+        text-align: left;
+    }
 }
