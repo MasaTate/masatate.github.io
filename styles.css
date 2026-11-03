@@ -533,7 +533,9 @@ main {
         color: #82abd4;
     }
 
+    /* 透過 PNG（Ego-Exo4D など）も見えるよう白い台紙を敷く */
     .card-image {
+        background-color: #fff;
         border-radius: 4px;
     }
 
