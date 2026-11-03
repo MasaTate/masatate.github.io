@@ -237,7 +237,7 @@ main {
     width: 100%;
 }
 .card-image {
-    width: 190px;
+    width: 250px;
     flex-shrink: 0;
     height: auto;
     margin-right: 20px;
@@ -345,7 +345,7 @@ main {
     }
 
     .card-image {
-        width: 160px;
+        width: 210px;
     }
 }
 
@@ -457,5 +457,88 @@ main {
     .card-abstract {
         font-size: 15px;
         text-align: left;
+    }
+}
+/* ===== Dark mode（ブラウザ / OS の設定に追従） ===== */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #16181c;
+        color: #e4e4e4;
+    }
+
+    a {
+        color: #8ab8e6;
+    }
+
+    header {
+        background-color: #1e2126;
+        border-bottom-color: #2c3036;
+    }
+
+    nav a {
+        color: #e4e4e4;
+    }
+
+    .bio img {
+        background-color: #2a2d33;
+    }
+
+    /* ロゴは同じサイズの白い台紙の上に載せて元の色のまま見せる */
+    .affiliations .logo {
+        background-color: #f4f4f2;
+        padding: 6px 10px;
+        border-radius: 6px;
+    }
+
+    .affiliations span {
+        color: #a0a0a0;
+    }
+
+    .news .date {
+        color: #d0d0d0;
+    }
+
+    .news .content,
+    .card-abstract {
+        color: #b8b8b8;
+    }
+
+    .news-archive summary {
+        color: #8fb0d6;
+    }
+
+    .card-title a {
+        color: #6fb0ec;
+    }
+
+    .card-conf {
+        color: #b4b4b4;
+    }
+
+    .conf-sub {
+        color: #9a9a9a;
+    }
+
+    .conf-cvpr {
+        border-color: #4fa8dd;
+        color: #4fa8dd;
+    }
+
+    .conf-wacv {
+        border-color: #f08a35;
+        color: #f08a35;
+    }
+
+    .card-links a {
+        color: #82abd4;
+    }
+
+    .card-image {
+        border-radius: 4px;
+    }
+
+    .highlight {
+        background-color: #2e2518;
+        border-left-color: #ff8c1a;
     }
 }
