@@ -539,6 +539,12 @@ main {
         border-radius: 4px;
     }
 
+    /* ロゴだけの透過サムネは台紙に余白をとって圧迫感を抑える */
+    .card-image-padded {
+        padding: 18px 22px;
+        border-radius: 6px;
+    }
+
     .highlight {
         background-color: #2e2518;
         border-left-color: #ff8c1a;
